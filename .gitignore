@@ -1,0 +1,6 @@
+!**/__pycache__/
+chat_app/migrations/__pycache__/__init__.cpython-37.pyc
+env
+db.sqlite3
+file.wav
+file.webm

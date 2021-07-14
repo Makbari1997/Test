@@ -1,0 +1,5 @@
+//this file consists of common commands we use during project development
+
+python manage.py makemigrations //responsible for creating new migrations based on the changes you have made to your models
+python manage.py migrate //responsible for applying and unapplying migrations
+pip freeze > requirements.txt //write all dependencies requirements.txt

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>۱۳۷ یار</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" href="/static/css/app.min.css">
+    <link rel="stylesheet" href="/static/css/chat.css?{% now "U" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body class="chats-tab-open">
+{% csrf_token %}
+
+    <!-- Main Layout Start -->
+    <div class="main-layout">
+        <!-- Main Start -->
+        <main class="main main-visible">
+            <!-- Chats Page Start -->
+            <div class="chats">
+                <div class="chat-body">
+
+                    <!-- Chat Header Start-->
+                    <div class="chat-header" style='direction: rtl;'>
+                        <!-- Chat participant's Name -->
+                        <div class="media chat-name align-items-center text-truncate">
+                            {% comment %} <div style='height: 40px; width: 40px; background-color: red;'></div> {% endcomment %}
+                            <img style='height: 50px; width: 50px;' class="injectable hw-24" src="./static/logo137.png" alt="Profile icon">
+                        </div>
+                    </div>
+                    <!-- Chat Header End-->
+
+                    <!-- Chat Content Start-->
+                    <div class="chat-content p-2" id="messageBody">
+                        <div class="container">
+                            <!-- Greetings Message Start -->
+                            <div id="message-wrapper">
+                                <div class="message">
+                                    <div class="message-wrapper">
+                                        <div class="message-content">
+                                            <span style="display: inline-block;">
+                                                سلام
+                                                <br>
+                                                وقت بخیر 
+                                                <br>
+                                                چه کمکی می توانم به شما بکنم؟
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Greetings Message End -->
+                        </div>
+                    </div>
+                    <!-- Chat Content End-->
+
+                    <!-- Chat Footer Start-->
+                    <div class="chat-footer">
+                        <div class="form-row">
+                            <!-- Chat Input Group Start -->
+                            <div class="col">
+                                <div class="input-group">
+                                    <textarea id="messageArea" class="form-control transparent-bg border-0 no-resize hide-scrollbar" placeholder="پیامتان را بنویسید" rows="1" style="direction: rtl"></textarea>
+                                    <i id='microphone' class="micro fas fa-microphone fa-2x" onclick='recordAction()'></i>
+                                    <div class="send_msg btn btn-primary btn-icon rounded-circle text-light m-1" role="button" onclick="sendMesage({'content': $('#messageArea').val(), 'is_user': true})">
+                                        <i id='sendButton' class="fas fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Chat Input Group End -->
+                        </div>
+                    </div>
+                    <!-- Chat Footer End-->
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Main Layout End -->
+  
+    <!-- Message Template Start -->
+    {% block messgae_template %}
+        {% include "message_template.html" %}
+    {% endblock %}
+    <!-- Message Template End -->
+
+    <!-- Javascript Files -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="/static/js/mustache.min.js"></script>
+    <script src="/static/js/chat.js?{% now "U" %}"></script>
+    <script src="/static/js/sound.js?{% now "U" %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.micro {
+    cursor:pointer;
+    transition: color 0.5s;
+}
+
+.micro:hover {
+    color: gray;
+}
+
+.msg-like, .msg-dislike {
+    cursor:pointer;
+    transition: color 0.5s;
+}
+
+.msg-like:hover {
+    color: green;
+}
+
+.msg-dislike:hover {
+    color:red;
+}
+
+a {
+    cursor:pointer;
+}
